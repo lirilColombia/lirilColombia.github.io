@@ -1506,7 +1506,10 @@ $(LEB.children[0]).trigger("click", true)
 
 function removeFolder( $folder ){
 if(typeof $f[0] !== "undefined" && ($f[0] === "/user/raw/p/8d299s2gvkL9/js" || $f[0] === "/user/raw/p/8d299s2gvkL9/css"))return
+crawl_in_folder($f[1])
 contextMenu.unDisplay()
+confirm("¿Quieres eliminar esta carpeta y todos sus subdirectorios y archivos, siendo éstos:\n"+ aL + "\n?")
+aL= ""
 
 var localStorage_files=[]
 
@@ -1538,18 +1541,20 @@ sp+= "-"
 }
 return(sp)
 }
+aL= ""
 
-function crawl_in_folder(fo){
+function crawl_in_folder(fo, id){
+var identaciones= typeof id !== "undefined"? id: 0
 $(fo.parent().children().not($(fo.parent().children()[0]))).each(function(){
 if($(this).is(".folder_cont")){
-console.log(ident(identaciones) + $($(this).children()[0]).text())
+aL= aL + "\n" + (ident(identaciones) + $($(this).children()[0]).text())
 identaciones++
-crawl_in_folder($($(this).children()[0]))
+crawl_in_folder($($(this).children()[0]), identaciones)
 }else{
-console.log(ident(identaciones) + $(this).text())
+aL= aL + "\n" + (ident(identaciones) + $(this).text())
 }
 })
-identaciones= 0
+var identaciones= typeof id !== "undefined"? id: 0
 }
 
 ace.EditSession.prototype.toJSON= function(){ 
