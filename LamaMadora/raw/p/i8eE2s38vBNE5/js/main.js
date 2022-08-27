@@ -25,6 +25,34 @@ selfDestructableSetIntervalWhichWaitsForSomething= setInterval(function(){
 
     group = new THREE.Group(); 
 
+const objLoader = new OBJLoader()
+objLoader.load(
+'/LamaMadora/raw/p/i8eE2s38vBNE5/resources/caballo.obj',
+(object) => {
+xc= object
+
+xc.scale.x= 0.0237156784
+xc.scale.y= 0.0237156784
+xc.scale.z= 0.0237156784
+xc.rotation.x= (Math.PI / 180) * 180
+xc.rotation.y= (Math.PI / 180) * 180
+xc.rotation.z= (Math.PI / 180) * 720
+
+xc.position.x= -2.0342499999999992
+xc.position.y= 2.7000449999999967
+xc.position.z=0.22132699999999997
+
+scene.add(xc)
+},
+(xhr) => {
+console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+},
+(error) => {
+console.log(error)
+}
+)
+
+
     loadSVG= function( svgLink, eXDepth, mAterial ){     
         loader.load(
             // resource URL
@@ -74,8 +102,8 @@ selfDestructableSetIntervalWhichWaitsForSomething= setInterval(function(){
         );
     }; 
 
-    loadSVG( '/LamaMadora/raw/p/i8eE2s38vBNE5/resources/Calles/StreetIII.svg', 0.1294318, new THREE.MeshStandardMaterial({ color: 0xfef0fe, roughness: 1, reflectivity: 0.47 }) ); 
-    
+    loadSVG( '/LamaMadora/raw/p/i8eE2s38vBNE5/resources/Calles/Calle2.svg', 0.1352318, new THREE.MeshStandardMaterial({ color: 0xde3f52, roughness: 1, reflectivity: 0.27 }) ); 
+
     camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.001, 89 );
     camera.position.z= 0.888; 
     camera.position.x = -0.01; 
@@ -228,7 +256,7 @@ selfDestructableSetIntervalWhichWaitsForSomething= setInterval(function(){
     
 
     Vv11.rotation.z= 218 * un_grado_en_radianes; 
-    Vv11.position.x= -15.856107644517733; 
+    Vv11.position.x= -25.231232135123644517733; 
     Vv11.position.y= 14.452729334533183; 
 
     renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -387,7 +415,7 @@ selfDestructableSetIntervalWhichWaitsForSomething= setInterval(function(){
 
     
     
-    Terreno = new THREE.Mesh( new THREE.BoxGeometry( 72, 72, 1.89 ), new THREE.MeshStandardMaterial({ color: 0xfef0fe, roughness: 1, reflectivity: 0.47 }) );
+    Terreno = new THREE.Mesh( new THREE.BoxGeometry( 217, 217, 1.89 ), new THREE.MeshStandardMaterial({ color: 0xd2e2c1, roughness: 1, reflectivity: 0.47 }) );
     
     Terreno.position.z= ( -0.033 - 0.02 - 0.5 - 0.445 )
     

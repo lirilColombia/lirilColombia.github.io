@@ -12,7 +12,8 @@
 		{
 			"imports": {
 				"three": "https://unpkg.com/three/build/three.module.js", 
-                "SVGLoader": "https://unpkg.com/three@0.141.0/examples/jsm/loaders/SVGLoader.js"
+                "SVGLoader": "https://unpkg.com/three@0.141.0/examples/jsm/loaders/SVGLoader.js",
+                "OBJLoader": "https://unpkg.com/three@0.141.0/examples/jsm/loaders/OBJLoader.js"
 			}
 		}
 	</script>
@@ -22,6 +23,8 @@
         window.THREE= THREE; 
         import { SVGLoader } from "./js/THREE.js"; 
         window.SVGLoader= SVGLoader; 
+        import { OBJLoader } from "./js/THREE.js"; 
+        window.OBJLoader= OBJLoader; 
     </script>
     <script type="module">
         import { Bezier } from "./js/bezier.js"; 
