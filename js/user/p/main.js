@@ -1554,7 +1554,6 @@ crawl_in_folder($($(this).children()[0]), identaciones)
 aL= aL + "\n" + (ident(identaciones) + $(this).text())
 }
 })
-var identaciones= typeof id !== "undefined"? id: 0
 }
 
 ace.EditSession.prototype.toJSON= function(){ 
