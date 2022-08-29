@@ -2437,7 +2437,6 @@ $(document).on("ready",function(e){
       
 
 
-e.stopPropagation() 
 
 
 });
@@ -2453,8 +2452,8 @@ axX= []
 $(".file.inScope").each(function(){if($(this).text() != $(".file.inScope.editing").text() && sort($(this).text(), $(".file.inScope.editing").text()) == "<"){axX[axX.length]= $(this); return;}})
 
 if(axX.length - 1 < $(".file.inScope").index($(".editing"))){
-for(v= $(".file.inScope").index($(".editing")) - 1; v > axX.length - 1; v--){
-$(".file.editing").after($(".file.inScope")[v].outerHTML)
+for(var vZ= $(".file.inScope").index($(".editing")) - 1; vZ > axX.length - 1; vZ--){
+$(".file.editing").after($(".file.inScope")[vZ].outerHTML)
 $(".editing").next().on("click", function(i, tr){if( $( this ).is( ".editing" ) )return
     $T= $("#files .file_tree")[0].scrollTop
     if( !$("#information #historia li").is( ".selected" ) && $("#file_expl #information_cont").hasClass("visible") && !!FileToRequest )return; 
@@ -2465,7 +2464,7 @@ $(".editing").next().on("click", function(i, tr){if( $( this ).is( ".editing" ) 
     $("#preview #file_preview #file")[0].innerHTML=""; 
     arr= []; 
 
-    eleo= $(this)[0]; 
+    eleo= $(_i.target)[0]; 
     
     for(eForensics in eleo.parentElement.children){ 
         if(parseInt(eForensics) < $(eleo).index() && eleo.parentElement.children[eForensics].getBoundingClientRect().y >= 110 && ((!!eleo.parentElement.children[eForensics].children[0] && $(eleo.parentElement.children[eForensics].children[0]).hasClass("inScope")) || (!eleo.parentElement.children[eForensics].children[0] && $(eleo.parentElement.children[eForensics]).hasClass("inScope")))){ 
@@ -2481,12 +2480,12 @@ $(".editing").next().on("click", function(i, tr){if( $( this ).is( ".editing" ) 
 
     !tr? topS= topS: topS= 0; 
 
-    $(this).css({"position": "absolute", "top": topS + "px"}); 
+    $(_i.target).css({"position": "absolute", "top": topS + "px"}); 
 
-    $(this).css({"opacity": "1"}); 
-    $(this).css({"height": "auto"}); 
-    $(this).css({"padding": ""}); 
-    $(this).css({"border-bottom": ""}); 
+    $(_i.target).css({"opacity": "1"}); 
+    $(_i.target).css({"height": "auto"}); 
+    $(_i.target).css({"padding": ""}); 
+    $(_i.target).css({"border-bottom": ""}); 
 
     
     setTimeout(function(){i.target.style.top= 0; ok= false; 
@@ -2496,7 +2495,7 @@ $(".editing").next().on("click", function(i, tr){if( $( this ).is( ".editing" ) 
 
     uRL= ""; 
                      
-    t= $(this); 
+    t= $(_i.target); 
               
     while(!t.is(".file_tree")){ 
         if(!t.hasClass("folder_cont")){ 
@@ -2735,10 +2734,10 @@ $(".editing").next().on("click", function(i, tr){if( $( this ).is( ".editing" ) 
 
     typeof LEB != "undefined"? $(LEB).addClass("inScope"): 949767649767; })
 $(".file.editing").next().on("input", function(_u){_in(_u)})
-$($(".file.inScope")[v]).remove()
+$($(".file.inScope")[vZ]).remove()
 }
 }else{
-for(e= axX.length - 1; e >= 0; e--){
+for(var e= axX.length - 1; e >= 0; e--){
 if($(".file.inScope").index(axX[e]) > $(".file.inScope").index($(".editing"))){
 $(".editing").before(axX[e][0].outerHTML)
 
@@ -3026,19 +3025,19 @@ axX[e].remove()
 }
 }
 }
-if( $( this )[0].innerText.indexOf( "\n" ) !== -1 )$( this ).text( $( this ).text().replaceAll( "\n", "" ) )
-localStorage.setItem( ((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( this ).text()), JSON.stringify( files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" ))) + "/" + $( this ).attr( "prevName" ))] ) )
-delete files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" ))) + "/" + $( this ).attr( "prevName" ))]
-localStorage.removeItem( ((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" ))) + "/" + $( this ).attr( "prevName" )) )
-if( localStorage.getItem( ((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( this ).text()) ) != null ){
-files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( this ).text())]= JSON.parse( localStorage.getItem( ((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( this ).text()) ) )
+if( $( _i.target )[0].innerText.indexOf( "\n" ) !== -1 )$( _i.target ).text( $( _i.target ).text().replaceAll( "\n", "" ) )
+localStorage.setItem( ((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( _i.target ).text()), JSON.stringify( files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" ))) + "/" + $( _i.target ).attr( "prevName" ))] ) )
+delete files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" ))) + "/" + $( _i.target ).attr( "prevName" ))]
+localStorage.removeItem( ((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" ))) + "/" + $( _i.target ).attr( "prevName" )) )
+if( localStorage.getItem( ((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( _i.target ).text()) ) != null ){
+files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( _i.target ).text())]= JSON.parse( localStorage.getItem( ((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( _i.target ).text()) ) )
 }else{
-files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( this ).text())]= {value: respuesta, undoManager: "{\"annotations\":[],\"breakpoints\":[],\"folds\":[],\"history\":{\"undo\":[],\"redo\":[],\"rev\":0,\"mark\":0},\"mode\":\"ace/mode/javascript\",\"scrollLeft\":0,\"scrollTop\":0,\"selection\":{\"start\":{\"row\":0,\"column\":0},\"end\":{\"row\":0,\"column\":0},\"isBackwards\":false},\"value\":\"\"}"}
+files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( _i.target ).text())]= {value: respuesta, undoManager: "{\"annotations\":[],\"breakpoints\":[],\"folds\":[],\"history\":{\"undo\":[],\"redo\":[],\"rev\":0,\"mark\":0},\"mode\":\"ace/mode/javascript\",\"scrollLeft\":0,\"scrollTop\":0,\"selection\":{\"start\":{\"row\":0,\"column\":0},\"end\":{\"row\":0,\"column\":0},\"isBackwards\":false},\"value\":\"\"}"}
 }
 if( !!$( "#information_cont" ).is( ".visible" ) ){
-history.pushState( {page: pageI}, "", ( !$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ) ) + "/" + $( this )[0].innerText) )
-document.querySelector( "#root div span span" ).innerText= $( this )[0].innerText
-FileToRequest= FileToRequest.slice( 0, FileToRequest.lastIndexOf( "/" ) + 1 ) + $( this )[0].innerText
+history.pushState( {page: pageI}, "", ( !$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ) ) + "/" + $( _i.target )[0].innerText) )
+document.querySelector( "#root div span span" ).innerText= $( _i.target )[0].innerText
+FileToRequest= FileToRequest.slice( 0, FileToRequest.lastIndexOf( "/" ) + 1 ) + $( _i.target )[0].innerText
 
 sprtdUrl= separateUrl(getToBusiness(decodeURIComponent(_w.location.pathname)))
 switch(sprtdUrl[sprtdUrl.length - 1].slice(sprtdUrl[sprtdUrl.length - 1].lastIndexOf(".") + 1)){
@@ -3064,7 +3063,7 @@ editor.session.setMode(new JavaScriptMode())
 break
 }
 }
-$( this ).attr( "prevName", $( this )[0].innerText )
+$( _i.target ).attr( "prevName", $( _i.target )[0].innerText )
 v()
 s()
 
