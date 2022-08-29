@@ -118,9 +118,10 @@ badGuy= function(){
 
 purger= {}; 
             
-purger.index= 10; 
+purger.index= {in: 11, sprPrg: true}; 
                  
 purger.purge= function( a ){ 
+    if(typeof purger.index.in !== "undefined")return
     fT= localStorage.getItem("file_tree")
     if( ( localStorage.getItem( "safety_purge" ) === null || ( localStorage.getItem( "safety_purge" ) !== null && parseInt( localStorage.getItem( "safety_purge" ) ) != purger.index ) ) || ( typeof a != "undefined" && a == "bypass" ) ){ 
         for( ii in localStorage ){ 
@@ -135,6 +136,13 @@ purger.purge= function( a ){
         console.log("Purged!"); 
     }; 
 }; 
+
+purger.super_purge= function( a ){
+if(!((typeof purger.index.in !== "undefined" && purger.index.in !== parseInt(localStorage.getItem("safety_purge"))) || (typeof a != "undefined" && a === "bypass")))return
+localStorage.clear()
+localStorage.setItem("safety_purge", purger.index.in)
+console.log("superPurged All files and file_trees were also deleted!")
+}
    
 document.addEventListener("keydown", function(i){(i.keyCode == 13 && !!window.getSelection().focusNode && $(window.getSelection().focusNode.parentElement).is(".revelar"))? $(window.getSelection().focusNode.parentElement).click(): 1; }); 
                                    

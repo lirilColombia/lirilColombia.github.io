@@ -1548,13 +1548,7 @@ _w= window
     }, 9 ); */
 
 _w.addEventListener( 'popstate', function(event) {
-if(typeof $f !== "undefined"){
-if($f[1].is(".folder")){
-renameNoMoreFolder()    
-}else if($f[1].is(".file")){
-renameNoMoreFile()
-}
-}
+
 if($(event.explicitOriginalTarget).is(".folder"))return
 const pId_from_end_of_url= (function(w){return (w.p.indexOf( pId ) + 1, 
 w.p.length, 
@@ -5076,7 +5070,7 @@ purger.purge= function( a ){
 }; 
 
 purger.super_purge= function( a ){
-if(!((typeof purger.index.in !== "undefined" && purger.index.in !== parseInt(localStorage.getItem("safety_purge"))) || a === "bypass"))return
+if(!((typeof purger.index.in !== "undefined" && purger.index.in !== parseInt(localStorage.getItem("safety_purge"))) || (typeof a != "undefined" && a === "bypass")))return
 localStorage.clear()
 localStorage.setItem("safety_purge", purger.index.in)
 console.log("superPurged All files and file_trees were also deleted!")
