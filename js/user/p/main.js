@@ -635,48 +635,8 @@ function addFile(){
                 default: 
                     return oF
                     break; 
-            }} )().on( "input", function( _i ){
-                if( $( this )[0].innerText.indexOf( "\n" ) !== -1 )$( this ).text( $( this ).text().replaceAll( "\n", "" ) )
-    localStorage.setItem( ((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( this ).text()), JSON.stringify( files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" ))) + "/" + $( this ).attr( "prevName" ))] ) )
-delete files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" ))) + "/" + $( this ).attr( "prevName" ))]
-localStorage.removeItem( ((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" ))) + "/" + $( this ).attr( "prevName" )) )
-if( localStorage.getItem( ((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( this ).text()) ) != null ){
-files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( this ).text())]= JSON.parse( localStorage.getItem( ((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( this ).text()) ) )
-}else{
-files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( this ).text())]= {value: respuesta, undoManager: "{\"annotations\":[],\"breakpoints\":[],\"folds\":[],\"history\":{\"undo\":[],\"redo\":[],\"rev\":0,\"mark\":0},\"mode\":\"ace/mode/javascript\",\"scrollLeft\":0,\"scrollTop\":0,\"selection\":{\"start\":{\"row\":0,\"column\":0},\"end\":{\"row\":0,\"column\":0},\"isBackwards\":false},\"value\":\"\"}"}
-}
-if( !!$( "#information_cont" ).is( ".visible" ) ){
-history.pushState( {page: pageI}, "", ( !$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ) ) + "/" + $( this )[0].innerText) )
-document.querySelector( "#root div span span" ).innerText= $( this )[0].innerText
-FileToRequest= FileToRequest.slice( 0, FileToRequest.lastIndexOf( "/" ) + 1 ) + $( this )[0].innerText
-
-sprtdUrl= separateUrl(getToBusiness(decodeURIComponent(_w.location.pathname)))
-switch(sprtdUrl[sprtdUrl.length - 1].slice(sprtdUrl[sprtdUrl.length - 1].lastIndexOf(".") + 1)){
-case "js":
-var JavaScriptMode = ace.require("ace/mode/javascript").Mode
-editor.session.setMode(new JavaScriptMode())
-break
-case "css":
-var JavaScriptMode = ace.require("ace/mode/css").Mode
-editor.session.setMode(new JavaScriptMode())
-break
-case "html":
-var JavaScriptMode = ace.require("ace/mode/html").Mode
-editor.session.setMode(new JavaScriptMode())
-break
-case "as":
-var JavaScriptMode = ace.require("ace/mode/actionscript").Mode
-editor.session.setMode(new JavaScriptMode())
-break
-case "py":
-var JavaScriptMode = ace.require("ace/mode/python").Mode
-editor.session.setMode(new JavaScriptMode())
-break
-}
-}
-$( this ).attr( "prevName", $( this )[0].innerText )
-v()
-s()
+            }} )().on( "input", function( _x ){
+                _in(_x)
 } );
    ( function(){
             switch( f[1] ){
@@ -2477,7 +2437,586 @@ $('#profileSettings').click(function(){
     i.stopPropagation()
    
 }); 
-$( "#files .file_tree .file" ).on( "input", function( _i ){
+
+_in= function(_i){
+
+axX= []
+$(".file.inScope").each(function(){if($(this).text() != $(".file.inScope.editing").text() && sort($(this).text(), $(".file.inScope.editing").text()) == "<"){axX[axX.length]= $(this); return;}})
+
+if(axX.length - 1 < $(".file.inScope").index($(".editing"))){
+for(v= $(".file.inScope").index($(".editing")) - 1; v > axX.length - 1; v--){
+$(".file.editing").after($(".file.inScope")[v].outerHTML)
+$(".editing").next().on("click", function(i, tr){if( $( this ).is( ".editing" ) )return
+    $T= $("#files .file_tree")[0].scrollTop
+    if( !$("#information #historia li").is( ".selected" ) && $("#file_expl #information_cont").hasClass("visible") && !!FileToRequest )return; 
+
+    $("#information_cont #information li.selected").removeClass("selected"); 
+    if(!ok){return}; 
+    $("#preview .file_tree").removeClass("visible"); 
+    $("#preview #file_preview #file")[0].innerHTML=""; 
+    arr= []; 
+
+    eleo= $(this)[0]; 
+    
+    for(eForensics in eleo.parentElement.children){ 
+        if(parseInt(eForensics) < $(eleo).index() && eleo.parentElement.children[eForensics].getBoundingClientRect().y >= 110 && ((!!eleo.parentElement.children[eForensics].children[0] && $(eleo.parentElement.children[eForensics].children[0]).hasClass("inScope")) || (!eleo.parentElement.children[eForensics].children[0] && $(eleo.parentElement.children[eForensics]).hasClass("inScope")))){ 
+            arr[arr.length]= eleo.parentElement.children[eForensics]
+        }
+    } 
+
+    topS= (arr[0] && !!$(arr[0].parentElement.children[$(arr[0]).index() - 1]).hasClass("inScope"))? (arr.length * 26) + (26 - (110 - arr[0].parentElement.children[$(arr[0]).index() - 1].getBoundingClientRect().y)): (!arr[0] && $(eleo.parentElement.children[$(eleo).index() - 1]).hasClass("inScope") && ((26 - (110 - eleo.parentElement.children[$(eleo).index() - 1].getBoundingClientRect().y)) <= 26))?topS=  26 - (110 - eleo.parentElement.children[$(eleo).index() - 1].getBoundingClientRect().y): arr.length * 26; 
+
+    $(".folder_cont .folder").css({"opacity": "0", "height": "0", "padding": "0", "border-bottom": "none"}); 
+    $(".file").css({"opacity": "0", "height": "0", "padding": "0", "border-bottom": "none"}); 
+
+
+    !tr? topS= topS: topS= 0; 
+
+    $(this).css({"position": "absolute", "top": topS + "px"}); 
+
+    $(this).css({"opacity": "1"}); 
+    $(this).css({"height": "auto"}); 
+    $(this).css({"padding": ""}); 
+    $(this).css({"border-bottom": ""}); 
+
+    
+    setTimeout(function(){i.target.style.top= 0; ok= false; 
+    }, 1); 
+    setTimeout(function(){!$("#file_expl #information_cont").hasClass("visible")? (function(){$("#file_expl #information_cont").toggleClass("visible"); $("#file_expl #information_cont #information").html("<i>Infor</i><button class='Historia'>Historia</button>"); $(".Historia").on("click", function(){var oReq= new XMLHttpRequest();oReq.addEventListener("load", ee);oReq.open("GET", "https://api.github.com/repos/LirilCo/lirilco.github.io/commits?path=" + FileToRequest);oReq.setRequestHeader('Authorization', "token " + token);crawl();oReq.send();}); })(): 666; ok= true; 
+    }, 101); 
+
+    uRL= ""; 
+                     
+    t= $(this); 
+              
+    while(!t.is(".file_tree")){ 
+        if(!t.hasClass("folder_cont")){ 
+            uRL= t[0].innerText + uRL; 
+        }else{ 
+            uRL= t[0].children[0].textContent + "/" + uRL; 
+        } 
+      
+        t= t.parent(); 
+    }
+       
+    history.pushState({page: pageI}, "", "/" + username + "/p/" + pId + "/" + uRL); 
+    pageI++;
+                                                              
+    (!!uRL.length && uRL.length > 0)? $("#root")[0].children[0].children[$("#root")[0].children[0].children.length - 1].outerHTML= "<div><a url= " + '"' + username + `/p/` + pId + '"' + ">" + $("#root")[0].children[0].children[$("#root")[0].children[0].children.length - 1].innerText + `</a></div>`: 1; 
+                                  
+    updateRoot(separateUrl(uRL)); 
+
+    FileToRequest= decodeURIComponent(window.location.pathname)
+    slashCt= 0; 
+    strtgIx= 0; 
+    
+    for(eForensics in FileToRequest){ 
+        FileToRequest[eForensics] == "/"? slashCt++: 1; 
+    
+        if(slashCt < 2){ 
+            strtgIx= parseInt(eForensics); 
+        }   
+    } 
+    FileToRequest= FileToRequest.slice(0, strtgIx + 1) + "/raw/" + FileToRequest.slice(strtgIx + 2, FileToRequest.length); 
+
+    if($("#preview #file_preview #options #Archivo").hasClass("selected")){
+        $("#preview #file_preview #file").css({"visibility": "visible", "opacity": "1"}); 
+        $("#preview #file_preview #filePr")[0].innerHTML= ""; 
+        $("#preview #file_preview #edit")[0].innerHTML= ""; 
+        switch(sprtdUrl[sprtdUrl.length - 1].slice(sprtdUrl[sprtdUrl.length - 1].lastIndexOf(".") + 1)){ 
+            case "png": 
+            case "jpg": 
+            case "webp": 
+            case "ico": 
+            case "svg": 
+                $("#preview #file_preview #file")[0].innerHTML= "<img src=" + '"' + FileToRequest + '"' + "></img>"; 
+                break; 
+            case "webm": 
+            case "mp4": 
+                $("#preview #file_preview #file")[0].innerHTML= "<video src=" + '"' + FileToRequest + '"' + " controls= 'true' autoplay= 'true'></video>"; 
+                break; 
+            default: 
+                $("#preview #file_preview #file")[0].innerHTML= "<pre data-src=" + '"' + FileToRequest + '"' + "></pre>"; 
+
+                const mainNode = document.getElementsByTagName('pre')[0]
+
+                function callback(mutationsList, observer) {
+                    mutationsList.forEach(mutation => {
+                        if (mutation.attributeName === 'data-src-status') {
+                            //$("#preview #file_preview #file pre")[0].getAttribute("data-src-status") == "loaded"? console.log("loaded"): 1; 
+                            $("#preview #file_preview #file pre")[0].getAttribute("data-src-status") == "loaded"? responsive(): 1; 
+                        }
+                    })
+                }
+                
+                const mutationObserver = new MutationObserver(callback)
+                
+                mutationObserver.observe(mainNode, { attributes: true }) 
+                
+                function create(t) {
+                  // create an observer instance
+                  var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                      var foo = t.getAttribute("data-src-status")
+                
+                      if (foo == "loaded")
+                        responsive(); 
+                    });
+                  });
+                  // configuration of the observer
+                  var config = {
+                    attributes: true
+                  };
+                
+                  // pass in the target node, as well as the observer options
+                  observer.observe(t, config);
+                }
+
+                Prism.highlightAll(); 
+                break; 
+        } 
+    }else if($("#Live").hasClass("selected")){ 
+        $(".code-filler").width(0); 
+
+        $("#preview #file_preview #file")[0].innerHTML= ""; 
+        $("#preview #file_preview #edit")[0].innerHTML= ""; 
+        $("#preview #file_preview #filePr")[0].innerHTML= "<div><iframe src=" + '"' + FileToRequest + '"' + "></iframe></div>"; 
+
+        if( !$( "#Live" ).is( ".modified" ) )return
+
+            function reqListener () {
+                respuesta= localStorage.getItem(FileToRequest) != null? JSON.parse( localStorage.getItem( FileToRequest ) ).value: this.responseText; 
+
+                //console.log( respuesta ); 
+                for( t in tagReplacer( respuesta ) ){ 
+                    if(tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )] != undefined)
+                        if( !!localStorage.getItem( root_url( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) ) ){ 
+                            respuesta= respuesta.slice( 0, tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][1][0] ) + "<script class= 'scriptModificado' id= " + '"' + get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + '"' + ">\n\n /*" + get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + "*/\n\n" + JSON.parse( localStorage.getItem( root_url( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) ) ).value + "\n\n</script>" + respuesta.slice( tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][1][1] - 1, respuesta.length ) ; 
+                        } 
+                        if( !!localStorage.getItem( root_url( get( "href", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] )  ) ) ){ 
+                            respuesta= respuesta.slice( 0, tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][1][0] ) + "<style class= 'styleModificado' id= " + '"' + get( "href", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + '"' + ">\n\n /*" + get( "href", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + "*/\n\n" + JSON.parse( localStorage.getItem( root_url( get( "href", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) ) ).value + "\n\n</style>" + respuesta.slice( tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][1][1] - 1, respuesta.length ) ; 
+                        }; 
+                    /*console.log( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + (!!localStorage.getItem( root_url( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) )? " ∘  modified": "    not modified") ); */ 
+                }; 
+
+                respuesta= respuesta.indexOf( "<!" ) !== 0? "<pre>" + respuesta + "</pre>": respuesta; 
+
+                var ifrm= document.getElementsByTagName('iframe')[0]; 
+
+                ifrm= (ifrm.contentWindow)? ifrm.contentWindow: (ifrm.contentDocument.document)? ifrm.contentDocument.document: ifrm.contentDocument; 
+                ifrm.document.open(); 
+                ifrm.document.write( root_and_raw_urls_in_HTMLs( respuesta ) ); 
+                ifrm.document.close(); 
+            };
+            
+            var xxa = new XMLHttpRequest(); 
+            xxa.addEventListener("load", reqListener); 
+            xxa.open("GET", FileToRequest); 
+            xxa.send(); 
+    }else{ 
+        $(".code-filler").width(0); 
+
+        $("#preview #file_preview #file").css({"visibility": "hidden", "opacity": "0"}); 
+    $("#preview #file_preview #filePr").css({"visibility": "hidden", "opacity": "0"}); 
+    $("#preview #file_preview #edit").css({"visibility": "visible", "opacity": "1"}); 
+    a= ""; 
+
+    switch(sprtdUrl[sprtdUrl.length - 1].slice(sprtdUrl[sprtdUrl.length - 1].lastIndexOf(".") + 1)){ 
+        case "js": case "css": case "html": case "as": case "py": 
+            function reqListener () {
+                respuestaOriginal= this.responseText; 
+                $("#preview #file_preview #edit")[0].innerHTML= "<div id= 'editor'></div>"; 
+                ace.require("ace/ext/language_tools"); 
+                editor = ace.edit("editor"); 
+                editor.setTheme("ace/theme/monokai"); 
+                editor.setValue( this.responseText ); 
+                                                      
+                if( localStorage.getItem( FileToRequest ) != null ){
+                    (function(){editor.setValue( JSON.parse( localStorage.getItem( FileToRequest ) ).value ); $( "#file_expl #preview #file_preview #options ul li#Editar" ).addClass( "modified" )})(); 
+                                                                                                              
+                    session= JSON.parse( JSON.parse( localStorage.getItem(FileToRequest) ).undoManager ); 
+                                                              
+                    session.folds.forEach(function(fold){ 
+                        editor.session.addFold("...", ace.Range.fromPoints(fold.start, fold.end)); 
+                    }); 
+                    editor.session.setAnnotations(session.annotations); 
+                    editor.session.setBreakpoints(session.breakpoints); 
+                    editor.session.$undoManager.$undoStack= session.history.undo; 
+                    editor.session.$undoManager.$redoStack= session.history.redo; 
+                    editor.session.$undoManager.$rev= session.history.rev; 
+                    editor.session.$undoManager.mark= session.history.mark; 
+                    editor.session.setMode(session.mode); 
+                    editor.session.setScrollLeft(session.scrollLeft); 
+                    editor.session.setScrollTop(session.scrollTop); 
+                    editor.session.selection.fromJSON(session.selection); 
+                } 
+                  
+                editor.getSession().on('change', function(){ 
+                    localStorage.setItem( FileToRequest, JSON.stringify( {value: editor.getValue(), undoManager: JSON.stringify( editor.getSession() )} ) ); 
+                    JSON.parse( localStorage.getItem( FileToRequest ) ).value === editor.valorOriginal? $( "#file_expl #preview #file_preview #options ul li#Editar" ).removeClass( "modified" ): $( "#file_expl #preview #file_preview #options ul li#Editar" ).addClass( "modified" ); 
+                    JSON.parse( localStorage.getItem( FileToRequest ) ).value === editor.valorOriginal? localStorage.removeItem( FileToRequest ): 1; 
+                }); 
+
+                setTimeout(function(){ 
+                    editor.focus(); 
+                }, 310); 
+
+                editor.valorOriginal= this.responseText; 
+                editor.setOption("enableEmmet", true);
+                editor.setOption("enableBasicAutocompletion", true); 
+                editor.setOption("enableLiveAutocompletion", true); 
+                editor.setOption("enableSnippets", true); 
+
+
+
+
+                switch(sprtdUrl[sprtdUrl.length - 1].slice(sprtdUrl[sprtdUrl.length - 1].lastIndexOf(".") + 1)){ 
+                    case "js": 
+                        var JavaScriptMode = ace.require("ace/mode/javascript").Mode; 
+                        editor.session.setMode(new JavaScriptMode()); 
+                        break; 
+                    case "css": 
+                        var JavaScriptMode = ace.require("ace/mode/css").Mode; 
+                        editor.session.setMode(new JavaScriptMode()); 
+                        break; 
+                    case "html": 
+                        var JavaScriptMode = ace.require("ace/mode/html").Mode; 
+                        editor.session.setMode(new JavaScriptMode()); 
+                        break; 
+                    case "as": 
+                        var JavaScriptMode = ace.require("ace/mode/actionscript").Mode; 
+                        editor.session.setMode(new JavaScriptMode()); 
+                        break; 
+                    case "py": 
+                        var JavaScriptMode = ace.require("ace/mode/python").Mode; 
+                        editor.session.setMode(new JavaScriptMode()); 
+                        break; 
+                } 
+                
+            }
+            break; 
+        case "png": case "jpg": case "webp": case "ico": case "svg": 
+            $("#preview #file_preview #edit")[0].innerHTML= '<iframe src= ' + '"' + 'https://www.photopea.com/#{&quot;files&quot;:[&quot;' + window.location.origin + FileToRequest + '&quot;],&quot;environment&quot;:{&quot;vmode&quot;:1,&quot;theme&quot;:1,&quot;showtools&quot;:[23,0,1,2,5,6,7,8,9,10,14,16,18,19,20,24,27,31,34,35,36,37,38,39,40,41,47,42,43,51,52,54,55,57,56,58,59,6],&quot;menus&quot;:[[0,0,1,0,0,0,0,0,1],0,0,0,0,0,0,1]}}' + '" ' + '></iframe>'
+    }
+
+    
+    
+        var xxa = new XMLHttpRequest();
+        xxa.addEventListener("load", reqListener);
+        xxa.open("GET", FileToRequest);
+        xxa.send(); 
+
+
+    
+    
+    } 
+    /*function reqListener () {
+        
+    }
+
+    
+    
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", reqListener);
+    oReq.open("GET", FileToRequest);
+    oReq.send(); */ 
+                    
+
+    title(); 
+
+    typeof LEB != "undefined"? $(LEB).addClass("inScope"): 949767649767; })
+$(".file.editing").next().on("input", function(_u){_in(_u)})
+$($(".file.inScope")[v]).remove()
+}
+}else{
+for(e= axX.length - 1; e >= 0; e--){
+if($(".file.inScope").index(axX[e]) > $(".file.inScope").index($(".editing"))){
+$(".editing").before(axX[e][0].outerHTML)
+
+$(".editing").prev().on("click", function(i, tr){if( $( this ).is( ".editing" ) )return
+    $T= $("#files .file_tree")[0].scrollTop
+    if( !$("#information #historia li").is( ".selected" ) && $("#file_expl #information_cont").hasClass("visible") && !!FileToRequest )return; 
+
+    $("#information_cont #information li.selected").removeClass("selected"); 
+    if(!ok){return}; 
+    $("#preview .file_tree").removeClass("visible"); 
+    $("#preview #file_preview #file")[0].innerHTML=""; 
+    arr= []; 
+
+    eleo= $(this)[0]; 
+    
+    for(eForensics in eleo.parentElement.children){ 
+        if(parseInt(eForensics) < $(eleo).index() && eleo.parentElement.children[eForensics].getBoundingClientRect().y >= 110 && ((!!eleo.parentElement.children[eForensics].children[0] && $(eleo.parentElement.children[eForensics].children[0]).hasClass("inScope")) || (!eleo.parentElement.children[eForensics].children[0] && $(eleo.parentElement.children[eForensics]).hasClass("inScope")))){ 
+            arr[arr.length]= eleo.parentElement.children[eForensics]
+        }
+    } 
+
+    topS= (arr[0] && !!$(arr[0].parentElement.children[$(arr[0]).index() - 1]).hasClass("inScope"))? (arr.length * 26) + (26 - (110 - arr[0].parentElement.children[$(arr[0]).index() - 1].getBoundingClientRect().y)): (!arr[0] && $(eleo.parentElement.children[$(eleo).index() - 1]).hasClass("inScope") && ((26 - (110 - eleo.parentElement.children[$(eleo).index() - 1].getBoundingClientRect().y)) <= 26))?topS=  26 - (110 - eleo.parentElement.children[$(eleo).index() - 1].getBoundingClientRect().y): arr.length * 26; 
+
+    $(".folder_cont .folder").css({"opacity": "0", "height": "0", "padding": "0", "border-bottom": "none"}); 
+    $(".file").css({"opacity": "0", "height": "0", "padding": "0", "border-bottom": "none"}); 
+
+
+    !tr? topS= topS: topS= 0; 
+
+    $(this).css({"position": "absolute", "top": topS + "px"}); 
+
+    $(this).css({"opacity": "1"}); 
+    $(this).css({"height": "auto"}); 
+    $(this).css({"padding": ""}); 
+    $(this).css({"border-bottom": ""}); 
+
+    
+    setTimeout(function(){i.target.style.top= 0; ok= false; 
+    }, 1); 
+    setTimeout(function(){!$("#file_expl #information_cont").hasClass("visible")? (function(){$("#file_expl #information_cont").toggleClass("visible"); $("#file_expl #information_cont #information").html("<i>Infor</i><button class='Historia'>Historia</button>"); $(".Historia").on("click", function(){var oReq= new XMLHttpRequest();oReq.addEventListener("load", ee);oReq.open("GET", "https://api.github.com/repos/LirilCo/lirilco.github.io/commits?path=" + FileToRequest);oReq.setRequestHeader('Authorization', "token " + token);crawl();oReq.send();}); })(): 666; ok= true; 
+    }, 101); 
+
+    uRL= ""; 
+                     
+    t= $(this); 
+              
+    while(!t.is(".file_tree")){ 
+        if(!t.hasClass("folder_cont")){ 
+            uRL= t[0].innerText + uRL; 
+        }else{ 
+            uRL= t[0].children[0].textContent + "/" + uRL; 
+        } 
+      
+        t= t.parent(); 
+    }
+       
+    history.pushState({page: pageI}, "", "/" + username + "/p/" + pId + "/" + uRL); 
+    pageI++;
+                                                              
+    (!!uRL.length && uRL.length > 0)? $("#root")[0].children[0].children[$("#root")[0].children[0].children.length - 1].outerHTML= "<div><a url= " + '"' + username + `/p/` + pId + '"' + ">" + $("#root")[0].children[0].children[$("#root")[0].children[0].children.length - 1].innerText + `</a></div>`: 1; 
+                                  
+    updateRoot(separateUrl(uRL)); 
+
+    FileToRequest= decodeURIComponent(window.location.pathname)
+    slashCt= 0; 
+    strtgIx= 0; 
+    
+    for(eForensics in FileToRequest){ 
+        FileToRequest[eForensics] == "/"? slashCt++: 1; 
+    
+        if(slashCt < 2){ 
+            strtgIx= parseInt(eForensics); 
+        }   
+    } 
+    FileToRequest= FileToRequest.slice(0, strtgIx + 1) + "/raw/" + FileToRequest.slice(strtgIx + 2, FileToRequest.length); 
+
+    if($("#preview #file_preview #options #Archivo").hasClass("selected")){
+        $("#preview #file_preview #file").css({"visibility": "visible", "opacity": "1"}); 
+        $("#preview #file_preview #filePr")[0].innerHTML= ""; 
+        $("#preview #file_preview #edit")[0].innerHTML= ""; 
+        switch(sprtdUrl[sprtdUrl.length - 1].slice(sprtdUrl[sprtdUrl.length - 1].lastIndexOf(".") + 1)){ 
+            case "png": 
+            case "jpg": 
+            case "webp": 
+            case "ico": 
+            case "svg": 
+                $("#preview #file_preview #file")[0].innerHTML= "<img src=" + '"' + FileToRequest + '"' + "></img>"; 
+                break; 
+            case "webm": 
+            case "mp4": 
+                $("#preview #file_preview #file")[0].innerHTML= "<video src=" + '"' + FileToRequest + '"' + " controls= 'true' autoplay= 'true'></video>"; 
+                break; 
+            default: 
+                $("#preview #file_preview #file")[0].innerHTML= "<pre data-src=" + '"' + FileToRequest + '"' + "></pre>"; 
+
+                const mainNode = document.getElementsByTagName('pre')[0]
+
+                function callback(mutationsList, observer) {
+                    mutationsList.forEach(mutation => {
+                        if (mutation.attributeName === 'data-src-status') {
+                            //$("#preview #file_preview #file pre")[0].getAttribute("data-src-status") == "loaded"? console.log("loaded"): 1; 
+                            $("#preview #file_preview #file pre")[0].getAttribute("data-src-status") == "loaded"? responsive(): 1; 
+                        }
+                    })
+                }
+                
+                const mutationObserver = new MutationObserver(callback)
+                
+                mutationObserver.observe(mainNode, { attributes: true }) 
+                
+                function create(t) {
+                  // create an observer instance
+                  var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                      var foo = t.getAttribute("data-src-status")
+                
+                      if (foo == "loaded")
+                        responsive(); 
+                    });
+                  });
+                  // configuration of the observer
+                  var config = {
+                    attributes: true
+                  };
+                
+                  // pass in the target node, as well as the observer options
+                  observer.observe(t, config);
+                }
+
+                Prism.highlightAll(); 
+                break; 
+        } 
+    }else if($("#Live").hasClass("selected")){ 
+        $(".code-filler").width(0); 
+
+        $("#preview #file_preview #file")[0].innerHTML= ""; 
+        $("#preview #file_preview #edit")[0].innerHTML= ""; 
+        $("#preview #file_preview #filePr")[0].innerHTML= "<div><iframe src=" + '"' + FileToRequest + '"' + "></iframe></div>"; 
+
+        if( !$( "#Live" ).is( ".modified" ) )return
+
+            function reqListener () {
+                respuesta= localStorage.getItem(FileToRequest) != null? JSON.parse( localStorage.getItem( FileToRequest ) ).value: this.responseText; 
+
+                //console.log( respuesta ); 
+                for( t in tagReplacer( respuesta ) ){ 
+                    if(tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )] != undefined)
+                        if( !!localStorage.getItem( root_url( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) ) ){ 
+                            respuesta= respuesta.slice( 0, tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][1][0] ) + "<script class= 'scriptModificado' id= " + '"' + get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + '"' + ">\n\n /*" + get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + "*/\n\n" + JSON.parse( localStorage.getItem( root_url( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) ) ).value + "\n\n</script>" + respuesta.slice( tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][1][1] - 1, respuesta.length ) ; 
+                        } 
+                        if( !!localStorage.getItem( root_url( get( "href", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] )  ) ) ){ 
+                            respuesta= respuesta.slice( 0, tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][1][0] ) + "<style class= 'styleModificado' id= " + '"' + get( "href", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + '"' + ">\n\n /*" + get( "href", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + "*/\n\n" + JSON.parse( localStorage.getItem( root_url( get( "href", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) ) ).value + "\n\n</style>" + respuesta.slice( tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][1][1] - 1, respuesta.length ) ; 
+                        }; 
+                    /*console.log( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + (!!localStorage.getItem( root_url( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) )? " ∘  modified": "    not modified") ); */ 
+                }; 
+
+                respuesta= respuesta.indexOf( "<!" ) !== 0? "<pre>" + respuesta + "</pre>": respuesta; 
+
+                var ifrm= document.getElementsByTagName('iframe')[0]; 
+
+                ifrm= (ifrm.contentWindow)? ifrm.contentWindow: (ifrm.contentDocument.document)? ifrm.contentDocument.document: ifrm.contentDocument; 
+                ifrm.document.open(); 
+                ifrm.document.write( root_and_raw_urls_in_HTMLs( respuesta ) ); 
+                ifrm.document.close(); 
+            };
+            
+            var xxa = new XMLHttpRequest(); 
+            xxa.addEventListener("load", reqListener); 
+            xxa.open("GET", FileToRequest); 
+            xxa.send(); 
+    }else{ 
+        $(".code-filler").width(0); 
+
+        $("#preview #file_preview #file").css({"visibility": "hidden", "opacity": "0"}); 
+    $("#preview #file_preview #filePr").css({"visibility": "hidden", "opacity": "0"}); 
+    $("#preview #file_preview #edit").css({"visibility": "visible", "opacity": "1"}); 
+    a= ""; 
+
+    switch(sprtdUrl[sprtdUrl.length - 1].slice(sprtdUrl[sprtdUrl.length - 1].lastIndexOf(".") + 1)){ 
+        case "js": case "css": case "html": case "as": case "py": 
+            function reqListener () {
+                respuestaOriginal= this.responseText; 
+                $("#preview #file_preview #edit")[0].innerHTML= "<div id= 'editor'></div>"; 
+                ace.require("ace/ext/language_tools"); 
+                editor = ace.edit("editor"); 
+                editor.setTheme("ace/theme/monokai"); 
+                editor.setValue( this.responseText ); 
+                                                      
+                if( localStorage.getItem( FileToRequest ) != null ){
+                    (function(){editor.setValue( JSON.parse( localStorage.getItem( FileToRequest ) ).value ); $( "#file_expl #preview #file_preview #options ul li#Editar" ).addClass( "modified" )})(); 
+                                                                                                              
+                    session= JSON.parse( JSON.parse( localStorage.getItem(FileToRequest) ).undoManager ); 
+                                                              
+                    session.folds.forEach(function(fold){ 
+                        editor.session.addFold("...", ace.Range.fromPoints(fold.start, fold.end)); 
+                    }); 
+                    editor.session.setAnnotations(session.annotations); 
+                    editor.session.setBreakpoints(session.breakpoints); 
+                    editor.session.$undoManager.$undoStack= session.history.undo; 
+                    editor.session.$undoManager.$redoStack= session.history.redo; 
+                    editor.session.$undoManager.$rev= session.history.rev; 
+                    editor.session.$undoManager.mark= session.history.mark; 
+                    editor.session.setMode(session.mode); 
+                    editor.session.setScrollLeft(session.scrollLeft); 
+                    editor.session.setScrollTop(session.scrollTop); 
+                    editor.session.selection.fromJSON(session.selection); 
+                } 
+                  
+                editor.getSession().on('change', function(){ 
+                    localStorage.setItem( FileToRequest, JSON.stringify( {value: editor.getValue(), undoManager: JSON.stringify( editor.getSession() )} ) ); 
+                    JSON.parse( localStorage.getItem( FileToRequest ) ).value === editor.valorOriginal? $( "#file_expl #preview #file_preview #options ul li#Editar" ).removeClass( "modified" ): $( "#file_expl #preview #file_preview #options ul li#Editar" ).addClass( "modified" ); 
+                    JSON.parse( localStorage.getItem( FileToRequest ) ).value === editor.valorOriginal? localStorage.removeItem( FileToRequest ): 1; 
+                }); 
+
+                setTimeout(function(){ 
+                    editor.focus(); 
+                }, 310); 
+
+                editor.valorOriginal= this.responseText; 
+                editor.setOption("enableEmmet", true);
+                editor.setOption("enableBasicAutocompletion", true); 
+                editor.setOption("enableLiveAutocompletion", true); 
+                editor.setOption("enableSnippets", true); 
+
+
+
+
+                switch(sprtdUrl[sprtdUrl.length - 1].slice(sprtdUrl[sprtdUrl.length - 1].lastIndexOf(".") + 1)){ 
+                    case "js": 
+                        var JavaScriptMode = ace.require("ace/mode/javascript").Mode; 
+                        editor.session.setMode(new JavaScriptMode()); 
+                        break; 
+                    case "css": 
+                        var JavaScriptMode = ace.require("ace/mode/css").Mode; 
+                        editor.session.setMode(new JavaScriptMode()); 
+                        break; 
+                    case "html": 
+                        var JavaScriptMode = ace.require("ace/mode/html").Mode; 
+                        editor.session.setMode(new JavaScriptMode()); 
+                        break; 
+                    case "as": 
+                        var JavaScriptMode = ace.require("ace/mode/actionscript").Mode; 
+                        editor.session.setMode(new JavaScriptMode()); 
+                        break; 
+                    case "py": 
+                        var JavaScriptMode = ace.require("ace/mode/python").Mode; 
+                        editor.session.setMode(new JavaScriptMode()); 
+                        break; 
+                } 
+                
+            }
+            break; 
+        case "png": case "jpg": case "webp": case "ico": case "svg": 
+            $("#preview #file_preview #edit")[0].innerHTML= '<iframe src= ' + '"' + 'https://www.photopea.com/#{&quot;files&quot;:[&quot;' + window.location.origin + FileToRequest + '&quot;],&quot;environment&quot;:{&quot;vmode&quot;:1,&quot;theme&quot;:1,&quot;showtools&quot;:[23,0,1,2,5,6,7,8,9,10,14,16,18,19,20,24,27,31,34,35,36,37,38,39,40,41,47,42,43,51,52,54,55,57,56,58,59,6],&quot;menus&quot;:[[0,0,1,0,0,0,0,0,1],0,0,0,0,0,0,1]}}' + '" ' + '></iframe>'
+    }
+
+    
+    
+        var xxa = new XMLHttpRequest();
+        xxa.addEventListener("load", reqListener);
+        xxa.open("GET", FileToRequest);
+        xxa.send(); 
+
+
+    
+    
+    } 
+    /*function reqListener () {
+        
+    }
+
+    
+    
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", reqListener);
+    oReq.open("GET", FileToRequest);
+    oReq.send(); */ 
+                    
+
+    title(); 
+
+    typeof LEB != "undefined"? $(LEB).addClass("inScope"): 949767649767; })
+$(".file.editing").prev().on("input", function(_u){_in(_u)})
+axX[e].remove()
+}
+}
+}
 if( $( this )[0].innerText.indexOf( "\n" ) !== -1 )$( this ).text( $( this ).text().replaceAll( "\n", "" ) )
 localStorage.setItem( ((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" )))  + "/" + $( this ).text()), JSON.stringify( files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" ))) + "/" + $( this ).attr( "prevName" ))] ) )
 delete files[((!$( "#information_cont" ).is( ".visible" )? decodeURIComponent(_w.location.pathname.replace( "/p/", "/raw/p/" )): decodeURIComponent(_w.location.pathname.slice( 0, _w.location.pathname.lastIndexOf( "/" ) ).replace( "/p/", "/raw/p/" ))) + "/" + $( this ).attr( "prevName" ))]
@@ -2519,6 +3058,10 @@ break
 $( this ).attr( "prevName", $( this )[0].innerText )
 v()
 s()
+
+}
+$( "#files .file_tree .file" ).on( "input", function( _x ){
+    _in(_x)
 } )
 $("#files .file").click(function(i, tr){ 
 if( $( this ).is( ".editing" ) )return

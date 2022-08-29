@@ -1,5 +1,15 @@
-RewriteEngine On
+RewriteEngine on
+
+# Ensure that directory listings are disabled
+Options -Indexes
+
+# Prevent mod_dir appending a slash to physical directories
 DirectorySlash Off
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^\.]+)$ $1.html [L,QSA]
+
+# Redirect to remove the ".html" extension
+# RewriteCond %{THE_REQUEST} /([^.?]+)\.html [NC]
+# RewriteRule ^ /%1 [NC,L,R=301]
+
+# Rewrite request to append ".html" extension if it exists
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule (.*) $1.html [L]
