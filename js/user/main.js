@@ -1067,7 +1067,7 @@ tipo= function( liurl ){
 document.addEventListener("keydown", function(i){(i.keyCode == 13 && !!window.getSelection().focusNode && $(window.getSelection().focusNode.parentElement).is(".revelar"))? $(window.getSelection().focusNode.parentElement).click(): 1; }); 
                                                                         
 $(window).load(function(){     
-    setTimeout(
+    /*setTimeout(
         function(){ 
             ttl= $("title").text(); 
     
@@ -1085,7 +1085,7 @@ $(window).load(function(){
 
             setTimeout(function(){$("title").html(ttl); }, 1700); 
         }
-        , 593); 
+        , 593); */ 
 }); 
 function getNewComments(m, h){ 
     var arr= []; 
@@ -1403,14 +1403,14 @@ K0= function(){
 $(document).on("ready",function(e){ 
     purger.purge(); 
                     
-    if(window.location.pathname.indexOf("/img/") === -1 && window.location.pathname.indexOf("/vid/") === -1 && window.location.pathname.indexOf("/pos/") === -1){ 
+    /*if(window.location.pathname.indexOf("/img/") === -1 && window.location.pathname.indexOf("/vid/") === -1 && window.location.pathname.indexOf("/pos/") === -1){ 
         $("#ties > div > div").each(function(){$(this).outerHeight() != $(this).prop("scrollHeight")? $(this).parent().addClass("overflowing"): 1}); 
                                          
         var oReq = new XMLHttpRequest();
         oReq.addEventListener("load", K0);
         oReq.open("get", "https://cdn.filestackcontent.com/4cpMUkITTAGimI5om7YA");
         oReq.send();
-    }; 
+    }; */ 
 
 /*    function reqListener(){
         $("badguy").remove();

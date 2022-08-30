@@ -147,7 +147,7 @@ console.log("superPurged All files and file_trees were also deleted!")
 document.addEventListener("keydown", function(i){(i.keyCode == 13 && !!window.getSelection().focusNode && $(window.getSelection().focusNode.parentElement).is(".revelar"))? $(window.getSelection().focusNode.parentElement).click(): 1; }); 
                                    
 $(window).load(function(){ 
-    setTimeout(
+    /*setTimeout(
         function(){ 
             ttl= $("title").text(); 
     
@@ -165,7 +165,7 @@ $(window).load(function(){
 
             setTimeout(function(){$("title").html(ttl); }, 1700); 
         } 
-        , 593); 
+        , 593); */ 
 }); 
 function getNewComments(m, h){ 
     var arr= []; 
@@ -450,10 +450,10 @@ $(document).on("ready",function(){
     $("#article .comentarios > .newComment").on('input', function(i){ 
         $("html").scrollTop($("html")[0].scrollHeight); 
     }); 
-    var oReq = new XMLHttpRequest();
+    /*var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", K0);
     oReq.open("get", "https://cdn.filestackcontent.com/4cpMUkITTAGimI5om7YA");
-    oReq.send();
+    oReq.send();*/ 
     $("#theater .read").on("click", function(){ 
         !$("#theater .description").hasClass("closed")? $("#theater .description").addClass("closed"): $("#theater .description").removeClass("closed"); 
         !$("#theater .comentarios").hasClass("open")? $("#theater .comentarios").addClass("open"): $("#theater .comentarios").removeClass("open"); 

@@ -277,7 +277,7 @@ badGuy= function(){
 }
 
 $(window).load(function(){ 
-    setTimeout(
+    /*setTimeout(
         function(){ 
             ttl= $("title").text(); 
     
@@ -295,7 +295,7 @@ $(window).load(function(){
 
             setTimeout(function(){$("title").html(ttl); }, 1700); 
         } 
-        , 593); 
+        , 593); */
 }); 
 function getNewComments(m, h){ 
     var arr= []; 
@@ -573,10 +573,10 @@ $(document).on("ready",function(e){
         } 
     } 
 
-    var oReq = new XMLHttpRequest();
+    /*var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", K0);
     oReq.open("get", "https://cdn.filestackcontent.com/4cpMUkITTAGimI5om7YA");
-    oReq.send();
+    oReq.send(); */ 
 
     /*$(".photo").each(function(){ 
         src= $(this).is(".mult_img")? un_tn($(this).find(".carr img")[0].src): un_tn($(this).find(".pic")[0].src); 

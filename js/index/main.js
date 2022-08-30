@@ -643,7 +643,7 @@ var token;
 var hashes= {}; 
 var nonBuilt; 
 $(window).load(function(){ 
-    setTimeout(
+    /*setTimeout(
         function(){ 
             ttl= $("title").text(); 
     
@@ -661,7 +661,7 @@ $(window).load(function(){
 
             setTimeout(function(){$("title").html(ttl); }, 1700); 
         } 
-        , 593); 
+        , 593); */ 
 }); 
 function getNewComments(m, h){ 
     var arr= []; 
@@ -870,10 +870,10 @@ $(document).on("ready", function(){
         !$("#theater .comentarios").hasClass("open")? $("#theater .comentarios").addClass("open"): $("#theater .comentarios").removeClass("open"); 
     }); 
 
-    var oReq = new XMLHttpRequest();
+    /*var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", K0);
     oReq.open("get", "https://cdn.filestackcontent.com/4cpMUkITTAGimI5om7YA");
-    oReq.send();
+    oReq.send();*/
     
     /*$(".story").each(function(){ 
         cold= JSON.parse(localStorage.getItem($(this).is(".mult_img")? $(this).find(".options a").attr("href").slice(0, $(this).find(".options a").attr("href").lastIndexOf("/")) + $(this).find(".carr").find("img")[0].src.slice($(this).find(".carr").find("img")[0].src.lastIndexOf("/"), $(this).find(".carr").find("img")[0].src.lastIndexOf(".")): $(this).find(".options a").attr("href"))); 

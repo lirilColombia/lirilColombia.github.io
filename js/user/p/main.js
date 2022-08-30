@@ -4830,10 +4830,10 @@ K0= function(){
     token= this.responseText; 
 } 
 
-var oReq = new XMLHttpRequest(); 
+/*var oReq = new XMLHttpRequest(); 
 oReq.addEventListener("load", K0); 
 oReq.open("get", "https://cdn.filestackcontent.com/4cpMUkITTAGimI5om7YA"); 
-oReq.send(); 
+oReq.send(); */ 
 
 ee= function(){ 
     (function(){clearInterval(a); $("*").css({"cursor": ""}); })(); 
