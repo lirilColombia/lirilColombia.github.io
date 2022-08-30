@@ -1403,14 +1403,14 @@ K0= function(){
 $(document).on("ready",function(e){ 
     purger.purge(); 
                     
-    /*if(window.location.pathname.indexOf("/img/") === -1 && window.location.pathname.indexOf("/vid/") === -1 && window.location.pathname.indexOf("/pos/") === -1){ 
+    if(window.location.pathname.indexOf("/img/") === -1 && window.location.pathname.indexOf("/vid/") === -1 && window.location.pathname.indexOf("/pos/") === -1){ 
         $("#ties > div > div").each(function(){$(this).outerHeight() != $(this).prop("scrollHeight")? $(this).parent().addClass("overflowing"): 1}); 
                                          
         var oReq = new XMLHttpRequest();
         oReq.addEventListener("load", K0);
         oReq.open("get", "https://cdn.filestackcontent.com/4cpMUkITTAGimI5om7YA");
         oReq.send();
-    }; */ 
+    }; 
 
 /*    function reqListener(){
         $("badguy").remove();

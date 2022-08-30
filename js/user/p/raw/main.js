@@ -212,3 +212,4 @@ localStorage.clear()
 localStorage.setItem("safety_purge", purger.index.in)
 console.log("superPurged All files and file_trees were also deleted!")
 }
+delete u; 

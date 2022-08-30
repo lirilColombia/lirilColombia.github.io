@@ -511,27 +511,47 @@ $(document).on("ready",function(){
   });
                 }});
 $(".revelar").on("click", function(){ 
-$(this).parent().next().css({"height": "500px", "oveflow": ""})
 
-        if($(this).text()[0] != "O"){ 
-            $(this).parent().find(".poema").css({"height": "auto"}); 
-	    $(this).parent().find("pre").css({"height": "auto"}); 
-	    $(this).parent().find("pre").css({"padding": "1em"}); 
-	    $($(this).parent().children()).each(function(){$(this).is(".code")? $(this).find(".code-scroll").css({"visibility": "visible"}): 1}); 
-            $(this)[0].tx= $(this).text(); 
-            $(this).parent().next().css({"height": "", "overflow": "", "border": "1px solid #ccc", "border-top": "none"}); 
-            $(this).parent().css({"border-bottom": "none"}); 
-            $(this).text("Ocultar de nuevo."); 
-            $(this).addClass("activado"); 
-        }else{ 
-            $(this).parent().next().css({"height": "0", "overflow": "hidden", "border": "none"}); 
-	    $(this).parent().find("pre").css({"height": "0"}); 
-	    $(this).parent().find("pre").css({"padding": "0"}); 
-	    $($(this).parent().children()).each(function(){$(this).is(".code")? $(this).find(".code-scroll").css({"visibility": "hidden"}): 1}); 
-            $(this).parent().css({"border-bottom": ""}); 
-            $(this).text($(this)[0].tx); 
-            $(this).removeClass("activado"); 
-        } 
+    if(!$(this).parent().next().is(".hdn")){if($(this).text()[0] != "O"){ 
+                $(this).parent().css({"height": "auto"}); 
+                $(this).parent().find(".poema").css({"height": "auto"}); 
+            $(this).parent().find("pre").css({"height": "auto"}); 
+            $(this).parent().find("pre").css({"padding": "1em"}); 
+            $($(this).parent().children()).each(function(){$(this).is(".code")? $(this).find(".code-scroll").css({"visibility": "visible"}): 1}); 
+                $(this)[0].tx= $(this).text(); 
+                $(this).text("Ocultar de nuevo."); 
+                $(this).addClass("activado"); 
+            }else{ 
+                $(this).parent().css({"height": "0"}); 
+                $(this).parent().find(".poema").css({"height": "0"}); 
+            $(this).parent().find("pre").css({"height": "0"}); 
+            $(this).parent().find("pre").css({"padding": "0"}); 
+            $($(this).parent().children()).each(function(){$(this).is(".code")? $(this).find(".code-scroll").css({"visibility": "hidden"}): 1}); 
+                $(this).text($(this)[0].tx); 
+                $(this).removeClass("activado"); 
+            } }else{
+            
+            $(this).parent().next().css({"height": "500px", "oveflow": ""})
+            
+                    if($(this).text()[0] != "O"){ 
+                        $(this).parent().find(".poema").css({"height": "auto"}); 
+                    $(this).parent().find("pre").css({"height": "auto"}); 
+                    $(this).parent().find("pre").css({"padding": "1em"}); 
+                    $($(this).parent().children()).each(function(){$(this).is(".code")? $(this).find(".code-scroll").css({"visibility": "visible"}): 1}); 
+                        $(this)[0].tx= $(this).text(); 
+                        $(this).parent().next().css({"height": "", "overflow": "", "border": "1px solid #ccc", "border-top": "none"}); 
+                        $(this).parent().css({"border-bottom": "none"}); 
+                        $(this).text("Ocultar de nuevo."); 
+                        $(this).addClass("activado"); 
+                    }else{ 
+                        $(this).parent().next().css({"height": "0", "overflow": "hidden", "border": "none"}); 
+                    $(this).parent().find("pre").css({"height": "0"}); 
+                    $(this).parent().find("pre").css({"padding": "0"}); 
+                    $($(this).parent().children()).each(function(){$(this).is(".code")? $(this).find(".code-scroll").css({"visibility": "hidden"}): 1}); 
+                        $(this).parent().css({"border-bottom": ""}); 
+                        $(this).text($(this)[0].tx); 
+                        $(this).removeClass("activado"); 
+                    } }
     })
     $("html").click(function(e) {
         $(".wrapper").removeClass("visible")
