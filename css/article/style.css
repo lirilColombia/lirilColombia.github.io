@@ -298,8 +298,13 @@ input:focus,textarea:focus {
 }
 #root {
   margin-top: 47px;
+  padding: unset !important;
+  box-sizing: border-box !important;
+  max-height: unset !important;
 }
-
+#root .contnr {
+  margin: 20px;
+}
 #video {
     margin-top: 6px
 }

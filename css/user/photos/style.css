@@ -1159,6 +1159,12 @@ header{
     overflow-x: auto;
     padding-right: 225px;
     box-sizing: border-box;
+    padding: unset !important;
+    box-sizing: border-box !important;
+    max-height: unset !important;
+}
+#root .contnr {
+  margin: 20px;
 }
 body{ 
     padding-top: 46px; 
