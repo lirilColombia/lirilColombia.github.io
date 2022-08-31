@@ -22,6 +22,8 @@ selfDestructableSetIntervalWhichWaitsForSomething= setInterval(function(){
         this.translateY( y ); 
         this.translateX( z ); 
     } 
+gOfSVG= []
+gOfObj= []
 
     group = new THREE.Group(); 
 
@@ -29,20 +31,19 @@ const objLoader = new OBJLoader()
 objLoader.load(
 '/LamaMadora/raw/p/i8eE2s38vBNE5/resources/caballo.obj',
 (object) => {
-xc= object
+gOfObj[gOfObj.length]= object
+gOfObj[gOfObj.length - 1].scale.x= 0.0237156784
+gOfObj[gOfObj.length - 1].scale.y= 0.0237156784
+gOfObj[gOfObj.length - 1].scale.z= 0.0237156784
+gOfObj[gOfObj.length - 1].rotation.x= (Math.PI / 180) * 180
+gOfObj[gOfObj.length - 1].rotation.y= (Math.PI / 180) * 180
+gOfObj[gOfObj.length - 1].rotation.z= (Math.PI / 180) * 720
 
-xc.scale.x= 0.0237156784
-xc.scale.y= 0.0237156784
-xc.scale.z= 0.0237156784
-xc.rotation.x= (Math.PI / 180) * 180
-xc.rotation.y= (Math.PI / 180) * 180
-xc.rotation.z= (Math.PI / 180) * 720
+gOfObj[gOfObj.length - 1].position.x= -2.0342499999999992
+gOfObj[gOfObj.length - 1].position.y= 2.7000449999999967
+gOfObj[gOfObj.length - 1].position.z=0.22132699999999997
 
-xc.position.x= -2.0342499999999992
-xc.position.y= 2.7000449999999967
-xc.position.z=0.22132699999999997
-
-scene.add(xc)
+scene.add(gOfObj[gOfObj.length - 1])
 },
 (xhr) => {
 console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
@@ -80,12 +81,12 @@ console.log(error)
                     }
         
                 }
-        
-                scene.add( group ); 
+                gOfSVG[gOfSVG.length]= group
+                scene.add( gOfSVG[gOfSVG.length - 1] ); 
 
-                group.translate( -getSizes( group ).x / 2, getSizes( group ).y / 2, 0 ); 
+                gOfSVG[gOfSVG.length - 1].translate( -getSizes( gOfSVG[gOfSVG.length - 1] ).x / 2, getSizes( gOfSVG[gOfSVG.length - 1] ).y / 2, 0 ); 
                 
-                group.scale.y= -1; 
+                gOfSVG[gOfSVG.length - 1].scale.y= -1; 
             },
             // called when loading is in progresses
             function ( xhr ) {
@@ -102,7 +103,7 @@ console.log(error)
         );
     }; 
 
-    loadSVG( '/LamaMadora/raw/p/i8eE2s38vBNE5/resources/Calles/Calle2328.svg', 0.1352318, new THREE.MeshStandardMaterial({ color: 0xde3f52, roughness: 1, reflectivity: 0.27 }) ); 
+    loadSVG( '/LamaMadora/raw/p/i8eE2s38vBNE5/resources/Calles/Calle2.svg', 0.21352318, new THREE.MeshStandardMaterial({ color: 0xde3f52, roughness: 1, reflectivity: 0.27 }) ); 
 
     camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.001, 89 );
     camera.position.z= 0.888; 
