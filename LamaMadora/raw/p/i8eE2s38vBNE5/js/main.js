@@ -87,6 +87,11 @@ console.log(error)
                 gOfSVG[gOfSVG.length - 1].translate( -getSizes( gOfSVG[gOfSVG.length - 1] ).x / 2, getSizes( gOfSVG[gOfSVG.length - 1] ).y / 2, 0 ); 
                 
                 gOfSVG[gOfSVG.length - 1].scale.y= -1; 
+
+                gOfSVG[0].scale.y= -0.8573749999999999
+                gOfSVG[0].scale.x= 0.8573749999999999
+                gOfSVG[0].scale.z= 0.8573749999999999
+
             },
             // called when loading is in progresses
             function ( xhr ) {
@@ -103,7 +108,7 @@ console.log(error)
         );
     }; 
 
-    loadSVG( '/LamaMadora/raw/p/i8eE2s38vBNE5/resources/Calles/Calle2.svg', 0.21352318, new THREE.MeshStandardMaterial({ color: 0xde3f52, roughness: 1, reflectivity: 0.27 }) ); 
+    loadSVG( '/LamaMadora/raw/p/i8eE2s38vBNE5/resources/Calles/City_1.svg', 0.21352318, new THREE.MeshStandardMaterial({ color: 0xde3f52, roughness: 1, reflectivity: 0.27 }) ); 
 
     camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.001, 89 );
     camera.position.z= 0.888; 
@@ -416,7 +421,7 @@ console.log(error)
 
     
     
-    Terreno = new THREE.Mesh( new THREE.BoxGeometry( 217, 217, 1.89 ), new THREE.MeshStandardMaterial({ color: 0xd2e2c1, roughness: 1, reflectivity: 0.47 }) );
+    Terreno = new THREE.Mesh( new THREE.BoxGeometry( 517, 517, 1.89 ), new THREE.MeshStandardMaterial({ color: 0xd2e2c1, roughness: 1, reflectivity: 0.47 }) );
     
     Terreno.position.z= ( -0.033 - 0.02 - 0.5 - 0.445 )
     
