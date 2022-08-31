@@ -102,7 +102,7 @@ console.log(error)
         );
     }; 
 
-    loadSVG( '/LamaMadora/raw/p/i8eE2s38vBNE5/resources/Calles/Calle2.svg', 0.1352318, new THREE.MeshStandardMaterial({ color: 0xde3f52, roughness: 1, reflectivity: 0.27 }) ); 
+    loadSVG( '/LamaMadora/raw/p/i8eE2s38vBNE5/resources/Calles/Calle2328.svg', 0.1352318, new THREE.MeshStandardMaterial({ color: 0xde3f52, roughness: 1, reflectivity: 0.27 }) ); 
 
     camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.001, 89 );
     camera.position.z= 0.888; 
