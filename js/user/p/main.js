@@ -804,7 +804,7 @@ if( $( this ).is( ".editing" ) )return
                     /*console.log( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + (!!localStorage.getItem( root_url( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) )? " ∘  modified": "    not modified") ); */ 
                 }; 
 
-                respuesta= respuesta.indexOf( "<!" ) !== 0? "<pre>" + respuesta + "</pre>": respuesta; 
+                console.log(respuesta); respuesta= respuesta.indexOf( "<!DOCTYPE html>" ) === -1? "<pre>" + respuesta.replaceAll("<", "&lt;").replaceAll(">", "&gt") + "</pre>": respuesta; 
 
                 var ifrm= document.getElementsByTagName('iframe')[0]; 
 
@@ -1771,7 +1771,7 @@ respuesta= respuesta.slice( 0, tagReplacer( respuesta )[tagReplacer( respuesta )
 /*console.log( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + (!!localStorage.getItem( root_url( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) )? " ∘  modified": "    not modified") ); */ 
 }; 
 
-respuesta= respuesta.indexOf( "<!" ) !== 0? "<pre>" + respuesta + "</pre>": respuesta; 
+console.log(respuesta); respuesta= respuesta.indexOf( "<!DOCTYPE html>" ) === -1? "<pre>" + respuesta.replaceAll("<", "&lt;").replaceAll(">", "&gt") + "</pre>": respuesta; 
 
 var ifrm= document.getElementsByTagName('iframe')[0]; 
 
@@ -2210,7 +2210,7 @@ $(document).on("ready",function(e){
                 /*console.log( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + (!!localStorage.getItem( root_url( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) )? " ∘  modified": "    not modified") ); */ 
             }; 
 
-            respuesta= respuesta.indexOf( "<!" ) !== 0? "<pre>" + respuesta + "</pre>": respuesta; 
+            console.log(respuesta); respuesta= respuesta.indexOf( "<!DOCTYPE html>" ) === -1? "<pre>" + respuesta.replaceAll("<", "&lt;").replaceAll(">", "&gt") + "</pre>": respuesta; 
 
             var ifrm= document.getElementsByTagName('iframe')[0]; 
 
@@ -2243,7 +2243,7 @@ $(document).on("ready",function(e){
                 }; 
 
 
-                respuesta= "<pre>" + respuesta + "</pre>"; 
+                console.log(respuesta);  respuesta= "<pre>" + respuesta.replaceAll("<", "&lt;").replaceAll(">", "&gt") + "</pre>"; 
 
                 var ifrm= document.getElementsByTagName('iframe')[0]; 
                         
@@ -2601,7 +2601,7 @@ $(".editing").next().on("click", function(i, tr){if( $( this ).is( ".editing" ) 
                     /*console.log( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + (!!localStorage.getItem( root_url( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) )? " ∘  modified": "    not modified") ); */ 
                 }; 
 
-                respuesta= respuesta.indexOf( "<!" ) !== 0? "<pre>" + respuesta + "</pre>": respuesta; 
+                console.log(respuesta); respuesta= respuesta.indexOf( "<!DOCTYPE html>" ) === -1? "<pre>" + respuesta.replaceAll("<", "&lt;").replaceAll(">", "&gt") + "</pre>": respuesta; 
 
                 var ifrm= document.getElementsByTagName('iframe')[0]; 
 
@@ -2888,7 +2888,7 @@ $(".editing").prev().on("click", function(i, tr){if( $( this ).is( ".editing" ) 
                     /*console.log( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + (!!localStorage.getItem( root_url( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) )? " ∘  modified": "    not modified") ); */ 
                 }; 
 
-                respuesta= respuesta.indexOf( "<!" ) !== 0? "<pre>" + respuesta + "</pre>": respuesta; 
+                console.log(respuesta); respuesta= respuesta.indexOf( "<!DOCTYPE html>" ) === -1? "<pre>" + respuesta.replaceAll("<", "&lt;").replaceAll(">", "&gt") + "</pre>": respuesta; 
 
                 var ifrm= document.getElementsByTagName('iframe')[0]; 
 
@@ -3219,7 +3219,7 @@ if( $( this ).is( ".editing" ) )return
                     /*console.log( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + (!!localStorage.getItem( root_url( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) )? " ∘  modified": "    not modified") ); */ 
                 }; 
 
-                respuesta= respuesta.indexOf( "<!" ) !== 0? "<pre>" + respuesta + "</pre>": respuesta; 
+                console.log(respuesta);  respuesta= respuesta.indexOf( "<!DOCTYPE html>" ) === -1? "<pre>" + respuesta.replaceAll("<", "&lt;").replaceAll(">", "&gt") + "</pre>": respuesta; 
 
                 var ifrm= document.getElementsByTagName('iframe')[0]; 
 
@@ -4052,7 +4052,7 @@ $("#Archivo, #Live, #Editar").click(function(){
                     /*console.log( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) + (!!localStorage.getItem( root_url( get( "src", tagReplacer( respuesta )[tagReplacer( respuesta ).length - 1 - parseInt( t )][0] ) ) )? " ∘  modified": "    not modified") ); */ 
                 }; 
 
-                respuesta= respuesta.indexOf( "<!" ) !== 0? "<pre>" + respuesta + "</pre>": respuesta; 
+                console.log(respuesta); respuesta= respuesta.indexOf( "<!DOCTYPE html>" ) === -1? "<pre>" + respuesta.replaceAll("<", "&lt;").replaceAll(">", "&gt") + "</pre>": respuesta; 
 
                 var ifrm= document.getElementsByTagName('iframe')[0]; 
 
@@ -4085,7 +4085,7 @@ $("#Archivo, #Live, #Editar").click(function(){
                     // };  
 
 
-                    respuesta= "<pre>" + respuesta + "</pre>"; 
+                    console.log(respuesta); respuesta= "<pre>" + respuesta.replaceAll("<", "&lt;").replaceAll(">", "&gt") + "</pre>"; 
 
                     var ifrm= document.getElementsByTagName('iframe')[0]; 
                             
@@ -4936,7 +4936,7 @@ ee= function(){
                     // };  
 
 
-                    respuesta= "<pre>" + respuesta + "</pre>"; 
+                    console.log(respuesta); respuesta= "<pre>" + respuesta.replaceAll("<", "&lt;").replaceAll(">", "&gt") + "</pre>"; 
 
                     var ifrm= document.getElementsByTagName('iframe')[0]; 
                             
