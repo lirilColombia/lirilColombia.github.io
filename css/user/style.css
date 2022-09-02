@@ -2120,7 +2120,7 @@ width: 100%;
 padding-top: 46px;
 height: 100vh;
 box-sizing: border-box;
-position: absolute;
+position: fixed;
 z-index: 200;
 top: 0}
 .searchResults.hidden{
