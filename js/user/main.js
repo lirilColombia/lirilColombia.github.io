@@ -2050,7 +2050,7 @@ $(".searchResults > div").html("")
 for(var f in results){
 $(".searchResults > div").append(
 `<section class="result">
-<a target= "_blank" href= "/` + results[f].username + `"></a>
+<a href= "/` + results[f].username + `"></a>
 <div class="profilePic">
 <img src="` + results[f].profilePic + `" alt="">
 <input class="knob button" data-width="106" data-height="106" data-fgColor="#2ecc71" data-bgColor="rgba(0,0,0,0)" data-displayInput=false data-thickness=".06" readonly value="` + results[f].rol[1].slice(1) + `"></div>
