@@ -740,7 +740,7 @@ text-decoration: none;
     top: 0;
     background-color: #000;
     opacity: 0.6;
-    z-index: 3;
+    z-index: 300;
 }   
 .theater
 {
@@ -754,7 +754,7 @@ text-decoration: none;
     margin-left: auto;
     position: fixed;
     height: 500px;
-    z-index: 3;
+    z-index: 300;
     top: 20px;
     max-width: 1400px;
 }
